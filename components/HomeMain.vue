@@ -5,7 +5,7 @@
         flex
         h-screen
         bg-gray-100 bg-main-texture bg-center bg-no-repeat bg-cover
-        -mt-28
+        -mt-24
         items-center
         justify-center
       "
