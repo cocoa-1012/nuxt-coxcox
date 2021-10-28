@@ -58,6 +58,8 @@
         </p>
       </div>
     </div>
+    <HomeMainSliderSection />
+    <LawFirmSection />
   </div>
 </template>
 
@@ -85,19 +87,29 @@ export default {
           title: "Truck Accident",
         },
       ],
+      linkData: [
+        {
+          id: 0,
+          image: "images/Image 12@1X.png",
+          url: "#",
+        },
+        {
+          id: 1,
+          image: "images/Image 14@1X.png",
+          url: "#",
+        },
+        {
+          id: 2,
+          image: "images/Image 16@1X.png",
+          url: "#",
+        },
+        {
+          id: 3,
+          image: "images/Image 15@1X.png",
+          url: "#",
+        },
+      ],
     };
   },
-  // methods: {
-  //   toggle() {
-  //     this.isOpen = !this.isOpen;
-  //     document.getElementById("myDropdown").classList.toggle("show");
-  //     document.getElementById("myDropdown").classList.add("w--open");
-  //   },
-  //   burgerToggle() {
-  //     this.burgerOpen = !this.burgerOpen;
-  //     document.getElementById("myDropdown").classList.toggle("show");
-  //     document.getElementById("myDropdown").classList.add("w--open");
-  //   },
-  // },
 };
 </script> 
