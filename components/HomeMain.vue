@@ -81,11 +81,14 @@
         <div class="bg-green-300 w-1/5 h-full"></div>
       </div>
     </section>
+    <ContactUsTodaySection />
   </div>
 </template>
 
 <script>
+import ContactUsTodaySection from "./ContactUsTodaySection.vue";
 export default {
+  components: { ContactUsTodaySection },
   data() {
     return {
       isOpen: false,
