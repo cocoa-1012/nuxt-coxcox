@@ -60,6 +60,27 @@
     </div>
     <HomeMainSliderSection />
     <LawFirmSection />
+    <section class="flex grid grid-cols-2 bg-gray-200">
+      <div class="flex flex-col justify-around m-12">
+        <p class="text-green-600 font-bold text-4xl mb-4">
+          <span class="border-b-8 border-yellow-600">Where</span> we lead?
+        </p>
+        <p class="text-3xl font-semibold ml-12 w-4/5">
+          In dollar amounts awarded per case per year, Cox, Cox, Filo, Camel &
+          Wilson L.L.C. is one of the leading personal injury law firms in Lake
+          Charles and in the state of Louisiana.
+        </p>
+        <p class="text-2xl ml-12 mt-4 w-4/5">
+          If you have been injured or lost a loved one, you may be entitled to
+          compensation for lost income, medical expenses, repairs, and pain and
+          suffering.
+        </p>
+      </div>
+      <div class="flex">
+        <img src="images/Image 17@1X.png" alt="" class="w-4/5" />
+        <div class="bg-green-300 w-1/5 h-full"></div>
+      </div>
+    </section>
   </div>
 </template>
 
