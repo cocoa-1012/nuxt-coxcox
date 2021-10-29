@@ -12,23 +12,24 @@
       "
     >
       <div class="bg-yellow-600 w-2 h-12"></div>
-      <p class="text-3xl m-4">Meet the attorneys</p>
-      <p class="text-2xl text-center mb-20">
+      <p class="text-3xl my-4">Meet the attorneys</p>
+      <p class="text-2xl text-center pb-28">
         Brothers James and Will Cox founded what is today the law firm of Cox,
         Cox, Filo, Camel & Wilson L.L.C. <br />
         in 1969, with a passionate sense of civic duty and a desire to champion
         client rights.
       </p>
     </div>
-    <div class="w-4/5 z-10">
-      <div class="container flex flex-col items-center justify-center">
-        <div class="flex items-center justify-center max-w-screen-xl mb-2">
-          <div
-            class="flex flex-col items-center w-80"
-            v-for="(data, index) in cardData"
-            :key="index"
-          >
-            <img :src="data.image" loading="lazy" alt="" class="w-4/5 -mt-16" />
+    <div class="-mt-20">
+      <VueSlickCarousel
+        ref="carousel"
+        class="flex items-center justify-center max-w-screen-xl mb-2"
+        :slidesToShow="4"
+        :slidesToScroll="4"
+      >
+        <div v-for="(data, index) in cardData" :key="index">
+          <div class="flex flex-col items-center">
+            <img :src="data.image" loading="lazy" alt="" class="w-4/5" />
             <div
               :id="data.id"
               class="
@@ -36,7 +37,6 @@
                 items-center
                 font-semibold
                 border-4
-                m-3
                 py-2
                 border-yellow-600
                 w-4/5
@@ -50,14 +50,14 @@
             </div>
           </div>
         </div>
-        <div class="flex items-center justify-center mb-20">
-          <div class="text-2xl cursor-pointer" @click="showBefore">
-            <img src="images/left-arrow.png" alt="" />
-          </div>
-          <p class="mx-4">{{ currentCardID + 1 }} / {{ cardData.length }}</p>
-          <div class="cursor-pointer" @click="showNext">
-            <img src="images/right-arrow.png" alt="" />
-          </div>
+      </VueSlickCarousel>
+      <div class="flex items-center justify-center mb-20 mt-5">
+        <div class="text-2xl cursor-pointer" @click="showBefore">
+          <img src="images/left-arrow.png" alt="" />
+        </div>
+        <p class="mx-4">{{ cardIndex + 1 }} / 4</p>
+        <div class="cursor-pointer" @click="showNext">
+          <img src="images/right-arrow.png" alt="" />
         </div>
       </div>
     </div>
@@ -83,24 +83,97 @@ export default {
         },
         {
           id: 1,
-          name: "Michael Cox",
+          name: "Michael Cox1",
           image: "images/Image 7@1X.png",
           role: "Partner",
         },
         {
           id: 2,
-          name: "PAUL COX",
+          name: "PAUL COX1",
           image: "images/Image 7@1X.png",
           role: "Partner",
         },
         {
           id: 3,
-          name: "Kevin Camel",
+          name: "Kevin Camel1",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 4,
+          name: "Tom Filo2",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 5,
+          name: "Michael Cox2",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 6,
+          name: "PAUL COX2",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 7,
+          name: "Kevin Camel2",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 8,
+          name: "Tom Filo3",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 9,
+          name: "Michael Cox3",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 10,
+          name: "PAUL COX3",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 11,
+          name: "Kevin Camel3",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 12,
+          name: "Tom Filo4",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 13,
+          name: "Michael Cox4",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 14,
+          name: "PAUL COX4",
+          image: "images/Image 7@1X.png",
+          role: "Partner",
+        },
+        {
+          id: 15,
+          name: "Kevin Camel4",
           image: "images/Image 7@1X.png",
           role: "Partner",
         },
       ],
       currentCardID: 0,
+      cardIndex: 0,
     };
   },
   mounted() {
@@ -125,21 +198,17 @@ export default {
       this.chooseCard(id);
     },
     showNext() {
-      this.currentCardID === this.cardData.length - 1
-        ? (this.currentCardID = 0)
-        : (this.currentCardID = this.currentCardID + 1);
-      this.chooseCard(this.currentCardID);
+      this.$refs.carousel.next();
+      this.cardIndex === 3
+        ? (this.cardIndex = 0)
+        : (this.cardIndex = this.cardIndex + 1);
     },
     showBefore() {
-      this.currentCardID === 0
-        ? (this.currentCardID = this.cardData.length - 1)
-        : (this.currentCardID = this.currentCardID - 1);
-      this.chooseCard(this.currentCardID);
+      this.$refs.carousel.prev();
+      this.cardIndex === 0
+        ? (this.cardIndex = 3)
+        : (this.cardIndex = this.cardIndex - 1);
     },
   },
 };
 </script> 
-
-export default {
-  
-};
